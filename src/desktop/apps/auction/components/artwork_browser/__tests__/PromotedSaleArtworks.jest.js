@@ -5,7 +5,7 @@ import { ArtworkRail } from "../../artwork_rail/ArtworkRail"
 import { promotedSaleArtworks } from "../__tests__/fixtures/promotedSaleArtworks"
 import { cloneDeep } from "lodash"
 
-xdescribe("auction/components/artwork_browser/PromotedSaleArtworks", () => {
+describe("auction/components/artwork_browser/PromotedSaleArtworks", () => {
   const data = {
     app: {
       isMobile: false,
@@ -20,7 +20,7 @@ xdescribe("auction/components/artwork_browser/PromotedSaleArtworks", () => {
     },
   }
 
-  it("renders a <ArtworkRail /> on desktop", () => {
+  it.only("renders a <ArtworkRail /> on desktop", () => {
     const { wrapper } = renderTestComponent({
       Component: PromotedSaleArtworks,
       data,

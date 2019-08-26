@@ -9,7 +9,7 @@ import { promotedSaleArtworks } from "../artwork_browser/__tests__/fixtures/prom
 const rewire = require("rewire")("../Layout")
 const Layout = rewire.default
 
-xdescribe("<Layout />", () => {
+describe("<Layout />", () => {
   let resetRewire
 
   beforeEach(() => {
@@ -519,10 +519,11 @@ xdescribe("<Layout />", () => {
     })
   })
 
-  describe("artwork rails", () => {
+  describe.only("artwork rails", () => {
     const data = {
       app: {
         isMobile: false,
+        promotedSaleArtworks: promotedSaleArtworks,
         auction: {
           name: "An Auction",
           sale_type: "auction promo",
@@ -538,7 +539,7 @@ xdescribe("<Layout />", () => {
     }
 
     describe("<BuyNowSaleArtworks />", () => {
-      it("does not render if there is no data", () => {
+      it.only("does not render if there is no data", () => {
         let emptyData = cloneDeep(data)
         emptyData.app.auction.promoted_sale.sale_artworks = null
 
@@ -635,6 +636,7 @@ xdescribe("<Layout />", () => {
       app: {
         isEcommerceSale: true,
         isMobile: false,
+        promotedSaleArtworks: [],
         auction: {
           name: "An Auction",
           sale_type: "auction promo",
