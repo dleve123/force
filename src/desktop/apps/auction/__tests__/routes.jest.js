@@ -18,7 +18,7 @@ jest.mock("desktop/apps/auction/actions/artworkBrowser", () => ({
   }),
 }))
 
-xdescribe("routes", () => {
+describe("routes", () => {
   beforeEach(() => {
     Backbone.sync = jest.fn()
   })
@@ -80,7 +80,7 @@ xdescribe("routes", () => {
       expect(res.send).toBeCalledWith("<html />")
     })
 
-    xit("works even with the Metaphysics module throwing an error", async () => {
+    it("works even with the Metaphysics module throwing an error", async () => {
       metaphysics
         .mockReturnValueOnce({ sale: { is_auction: true } })
         .mockRejectedValue("oops!")
