@@ -47,7 +47,7 @@ export const NavBar: React.FC<NavBarProps> = ({
       <NavBarContainer id="main-layout-header">
         {showStagingBanner && <StagingBanner />}
         <ReactionNavBar />
-        {flashMessage && <FlashBanner messageCode={flashMessage} />}
+        {<FlashBanner messageCode={flashMessage} />}
       </NavBarContainer>
     </SystemContextProvider>
   )
